@@ -1011,6 +1011,7 @@ actions.which_key = function(prompt_bufnr, opts)
   a.nvim_win_set_option(km_win_id, "foldenable", false)
 
   vim.api.nvim_create_autocmd("BufLeave", {
+    buffer = km_buf,
     once = true,
     callback = function()
       pcall(vim.api.nvim_win_close, km_win_id, true)

@@ -501,6 +501,7 @@ function Picker:find()
   vim.api.nvim_create_augroup("PickerInsert", {}) 
   -- TODO: Use WinLeave as well?
   vim.api.nvim_create_autocmd("BufLeave", {
+    buffer = prompt_bufnr,
     group = "PickerInsert",
     nested = true,
     once = true,
@@ -509,6 +510,7 @@ function Picker:find()
     end,
   })
   vim.api.nvim_create_autocmd("VimResized", {
+    buffer = prompt_bufnr,
     group = "PickerInsert",
     nested = true,
     once = true,
